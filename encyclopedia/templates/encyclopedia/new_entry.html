@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+{% if true %}
+<h1><span class="text-danger"> {{title}} </span>already exists , please change to another entry</h1>
+<br>
+{% else %}
+    <h1>Create New Entry</h1>
+    <br>
+{% endif %}   
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Save" class="btn btn-dark  mt-5">
+</form>
+
+{% endblock %} 
